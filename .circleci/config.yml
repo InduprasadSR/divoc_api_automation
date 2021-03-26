@@ -6,4 +6,20 @@ orbs:
 workflows:
   maven_test:
     jobs:
-      - maven/test
+      - maven/test 
+   
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    command:
+      - mvn test -Dtest=-Dtest=CertifyAPIRunner.java
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+- store_artifacts:
+    path: /bin/final_build
