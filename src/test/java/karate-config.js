@@ -6,10 +6,10 @@ function fn() {
   }
   
   var config = {
-    baseUrl: "https://demo-divoc.egov.org.in",
-    grantType: "client_credentials" ,
-    clientId: "admin-api" ,
-     clientSecret:"7ac88c2b-87b4-4e46-be51-24ed36cead77"
+    baseUrl: "https://divoc.egov.org.in",
+    grantType: "#################" ,
+    clientId: "#########" ,
+     clientSecret:"#################"
      };
 
   
