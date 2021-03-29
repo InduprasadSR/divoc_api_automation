@@ -9,7 +9,7 @@ function fn() {
     baseUrl: "https://divoc.egov.org.in",
     grantType: "#################" ,
     clientId: "#########" ,
-     clientSecret:"#################"
+     clientSecret:"################"
      };
 
   
