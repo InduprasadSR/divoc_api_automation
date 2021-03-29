@@ -31,3 +31,28 @@ jobs:
         # Destination path
         path: "*/surefire-reports"
     
+    - name: Cucumber Report to Annotations
+  # You may pin to the exact commit or the version.
+  # uses: deblockt/cucumber-report-annotations-action@152244262905d9ce2b17889606535ede6c9ab79b
+      uses: deblockt/cucumber-report-annotations-action@v1.7
+      with:
+          # github token
+      access-token: 
+      # glob to cucumber json files
+      path: # default is **/cucumber-report.json
+      # the check status to use on cucumber error. Can be 'success', 'neutral' or 'failure'
+      check-status-on-error: # default is failure
+      # the check status to use on cucumber undefined steps. Can be 'success', 'neutral' or 'failure'
+      check-status-on-undefined: # default is success
+      # the check status to use on cucumber pending steps. Can be 'success', 'neutral' or 'failure'
+      check-status-on-pending: # default is success
+      # the annotation status on error. Can be 'notice', 'warning', 'failure'
+      annotation-status-on-error: # optional, default is failure
+      # the annotation status on undefined steps. Can be 'notice', 'warning', 'failure'. if this property is not set, no annotation will be generated for undefined steps
+      annotation-status-on-undefined: # optional
+      # the annotation status on pending steps. Can be 'notice', 'warning', 'failure'. if this property is not set, no annotation will be generated for pending steps
+      annotation-status-on-pending: # optional
+      # if it is set to true, the number of errors will be indicated on the check title (visible on the pr check)
+      show-number-of-error-on-check-title: # optional, default is true
+      # the name of the check
+      name: # optional, default is Cucumber report
