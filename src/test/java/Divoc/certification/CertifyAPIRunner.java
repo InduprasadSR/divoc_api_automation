@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@RunWith(Karate.class)
+//@RunWith(Karate.class)
 @KarateOptions(tags = {"~@ignore"})
 // important: do not use @RunWith(Karate.class) !
 public class CertifyAPIRunner {
