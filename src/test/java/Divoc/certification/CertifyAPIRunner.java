@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.List;
 
 
-@RunWith(Karate.class)
+//@RunWith(Karate.class)
 @KarateOptions(tags = {"~@ignore"})
 // important: do not use @RunWith(Karate.class) !
 public class CertifyAPIRunner {
