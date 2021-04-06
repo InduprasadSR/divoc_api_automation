@@ -171,7 +171,7 @@ public class CustomExtentReport {
 	}
 
 	private void setConfig() {
-		extentSparkReporter.config().enableOfflineMode(true);
+		extentSparkReporter.config().enableOfflineMode(false);
 		extentSparkReporter.config().setDocumentTitle(reportTitle);
 		extentSparkReporter.config().setTimelineEnabled(true);
 		extentSparkReporter.config().setTheme(Theme.DARK);
