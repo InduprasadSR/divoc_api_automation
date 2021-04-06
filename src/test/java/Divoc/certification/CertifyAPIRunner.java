@@ -28,10 +28,16 @@ public class CertifyAPIRunner {
 
     @Test
     public void testParallel() {
-        System.setProperty("karate.env", "Divoc"); // ensure reset if other tests (e.g. mock) had set env in CI
-        Results results = Runner.parallel(getClass(), 5);
-        generateReport(results.getReportDir());
-        assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
+         Builder aRunner = new Builder();
+        aRunner.path("classpath:Divoc/registration");
+        Results results = aRunner.parallel(5);
+        
+        //Extent Report
+        CustomExtentReport extentReport = new CustomExtentReport()
+                .withKarateResult(results)
+                .withReportDir(results.getReportDir())
+                .withReportTitle("Karate Test Execution Report");
+        extentReport.generateExtentReport();
     }
 
     public static void generateReport(String karateOutputPath) {
