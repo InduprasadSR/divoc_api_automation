@@ -6,16 +6,27 @@ import org.junit.runner.RunWith;
 import com.intuit.karate.KarateOptions;
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
+import Divoc.ExtentReport.CustomExtentReport;
+import com.intuit.karate.KarateOptions;
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner;
+import com.intuit.karate.junit4.Karate;
+import net.masterthought.cucumber.Configuration;
+import net.masterthought.cucumber.ReportBuilder;
+import org.apache.commons.io.FileUtils;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import com.intuit.karate.Runner.Builder;
+
+
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import net.masterthought.cucumber.Configuration;
-import net.masterthought.cucumber.ReportBuilder;
-import org.apache.commons.io.FileUtils;
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
 
 @RunWith(Karate.class)
 @KarateOptions(tags = {"~@ignore"})
@@ -29,7 +40,7 @@ public class CertifyAPIRunner {
     @Test
     public void testParallel() {
          Builder aRunner = new Builder();
-        aRunner.path("classpath:Divoc/registration");
+        aRunner.path("classpath:Divoc/certification");
         Results results = aRunner.parallel(5);
         
         //Extent Report
